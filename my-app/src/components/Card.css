@@ -13,3 +13,8 @@
     transition: 0.1s;
 
 }
+
+.memory-pic:active {
+    transform: scale(0.95);
+    transition: 0.1s;
+}

@@ -7,25 +7,56 @@ import Card from "./components/Card";
 import './App.css';
 import Images from "./components/img.json"
 
+
 class App extends React.Component {
 
   state = {
     imgArray: Images,
+    guessedArray: [],
     correct: 0,
     highScore: 0
-    
+
   };
 
   handleHover = (e) => {
     e.preventDefault();
 
-    let myCard = e.target;
-
   }
 
   handleClick = (e) => {
     e.preventDefault();
-    this.setState({ imgArray: this.shuffle(this.state.imgArray) })
+
+    let index = e.target.attributes.index.value;
+
+    if (!this.state.guessedArray.includes(index)) {
+
+      if (this.state.correct === this.state.highScore) {
+        this.setState(
+          {
+            correct: this.state.correct + 1,
+            highScore: this.state.highScore + 1,
+            guessedArray: [...this.state.guessedArray, index],
+            imgArray: this.shuffle(this.state.imgArray)
+          }
+        )
+      }
+      else {
+        this.setState(
+          {
+            correct: this.state.correct + 1,
+            guessedArray: [...this.state.guessedArray, index],
+            imgArray: this.shuffle(this.state.imgArray)
+          }
+        )
+      }
+    }
+    else {
+      this.setState({
+        correct : 0,
+        guessedArray : [],
+        imgArray: this.shuffle(this.state.imgArray)
+      })
+    }
   }
 
   shuffle(array) {
@@ -43,7 +74,10 @@ class App extends React.Component {
 
     return (
       <>
-        <Nav />
+        <Nav
+          highScore={this.state.highScore}
+          currentScore={this.state.correct}
+        />
         <Header />
         <Container>
           <Row>
