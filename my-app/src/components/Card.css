@@ -1,8 +1,15 @@
 .memory-pic {
-    border: beige solid 5px;
+    border: red solid 5px;
     border-radius: 10px;
     max-width: 100%;
     height: auto;
     box-shadow: 3px 3px 3px gray;
     margin: .8rem;
+}
+
+.memory-pic:hover {
+
+    transform: scale(1.05);
+    transition: 0.1s;
+
 }

@@ -1,0 +1,50 @@
+[
+        {
+            "id": 1,
+            "src": "./img/boo.jpg"
+        },
+        {
+            "id": 2,
+            "src": "./img/bowser.png"
+        },
+        {
+            "id": 3,
+            "src": "./img/chomp.jpg"
+        },
+        {
+            "id": 4,
+            "src": "./img/daisy.png"
+        },
+        {
+            "id": 5,
+            "src": "./img/iup.jpg"
+        },
+        {
+            "id": 6,
+            "src": "./img/koopa.jpg"
+        },
+        {
+            "id": 7,
+            "src": "./img/luigi.jpg"
+        },
+        {
+            "id": 8,
+            "src": "./img/mario.png"
+        },
+        {
+            "id": 9,
+            "src": "./img/peach.jpg"
+        },
+        {
+            "id": 10,
+            "src": "./img/plant.png"
+        },
+        {
+            "id": 11,
+            "src": "./img/toad.jpg"
+        },
+        {
+            "id": 12,
+            "src": "./img/yoshi.jpg"
+        }
+]

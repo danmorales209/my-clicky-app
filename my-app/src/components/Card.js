@@ -4,7 +4,11 @@ import './Card.css'
 function Card(props) {
     return (
         <div className=" col-sm-3">
-            <img className=" .img-fluid memory-pic shadow" src="https://picsum.photos/200/200" alt="random_image" />
+            <img className=" .img-fluid memory-pic shadow"
+            src={props.src}
+            alt="random_image"
+            index={props.index}
+            {...props}  />
         </div>
     )
 }
