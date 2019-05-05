@@ -1,12 +1,12 @@
 import React from 'react';
+import "./Nav.css";
 
 function Nav(props) {
     return (
         <>
-            <nav className = "navbar navbar-success bg-danger flex-row justify-content-center d-flex">
-                <a className ="navbar-brand text-light " href="#">The Clicky Game</a>
-                <div className = "nav-item m-1 d-flex" >Current Score: {props.currentScore}</div>
-                <div className = "nav-item m-1 d-flex" >High Score: {props.highScore}</div>
+            <nav className="navbar navbar-success flex-row justify-content-center d-flex">
+                <p id="score" className="nav-item m-2 d-flex h4 " href="#" >Current Score: {props.currentScore}</p>
+                <p id="highScore" className="nav-item m-2 d-flex h4 " href="#">High Score: {props.highScore}</p>
             </nav>
         </>
     );

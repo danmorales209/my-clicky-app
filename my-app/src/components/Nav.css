@@ -1,0 +1,69 @@
+@keyframes success {
+    0% {
+        color: white;
+        transform: scale(1.0)
+    }
+    50% {
+        color: green;
+        transform: scale(1.05)
+    }
+    
+    to {
+        color: white;
+        transform: scale(1.0)
+    }
+
+}
+@keyframes fail {
+    0% {
+        color: white;
+        transform: scale(1.0)
+    }
+    50% {
+        color: red;
+        transform: scale(1.05)
+    }
+    
+    to {
+        color: white;
+        transform: scale(1.0)
+    }
+}
+
+@keyframes nav-fail {
+    0% {
+        background-color: red;
+    }
+
+    50% {
+        background-color: white;
+    }
+
+    100% {
+        background-color: red;
+    }
+}
+
+.correct-guess {
+    animation: 0.4s success;
+    animation-play-state: running;
+}
+
+.incorrect-guess {
+    animation: 0.4s fail;
+    animation-play-state: running;
+}
+
+.nav-incorrect-guess {
+    animation: 0.4s nav-fail;
+    animation-play-state: running;
+}
+
+#score, #highScore {
+    color: white;
+}
+
+.navbar {
+    background-color: red;
+}
+

@@ -23,10 +23,54 @@ class App extends React.Component {
 
   }
 
+  componentDidMount() {
+
+    console.log("Mounted")
+
+    let scoreDisplay = document.querySelector("#score");
+    let highScoreDisplay = document.querySelector("#highScore");
+    let navBar = document.querySelector(".navbar");
+
+    scoreDisplay.addEventListener("animationend", function () {
+      let classes = this.classList;
+
+      if (classes.contains("correct-guess")) {
+        this.classList.remove("correct-guess");
+      }
+      else if (classes.contains("incorrect-guess")) {
+        this.classList.remove("incorrect-guess");
+      }
+    });
+
+    highScoreDisplay.addEventListener("animationend", function () {
+      let classes = this.classList;
+
+      if (classes.contains("correct-guess")) {
+        this.classList.remove("correct-guess");
+      }
+      else if (classes.contains("incorrect-guess")) {
+        this.classList.remove("incorrect-guess");
+      }
+    });
+
+    navBar.addEventListener("animationend", function() {
+      
+      if ( this.classList.contains("nav-incorrect-guess") ) {
+        this.classList.toggle("nav-incorrect-guess");
+      }
+    })
+
+
+
+  }
+
   handleClick = (e) => {
     e.preventDefault();
 
     let index = e.target.attributes.index.value;
+    let scoreDisplay = document.querySelector("#score");
+    let highScoreDisplay = document.querySelector("#highScore");
+    let navBar = document.querySelector(".navbar");
 
     if (!this.state.guessedArray.includes(index)) {
 
@@ -38,7 +82,11 @@ class App extends React.Component {
             guessedArray: [...this.state.guessedArray, index],
             imgArray: this.shuffle(this.state.imgArray)
           }
-        )
+        );
+        
+        scoreDisplay.classList.add("correct-guess");
+        highScoreDisplay.classList.add("correct-guess");
+
       }
       else {
         this.setState(
@@ -47,15 +95,22 @@ class App extends React.Component {
             guessedArray: [...this.state.guessedArray, index],
             imgArray: this.shuffle(this.state.imgArray)
           }
-        )
+        );
+
+        scoreDisplay.classList.add("correct-guess");
       }
     }
     else {
       this.setState({
-        correct : 0,
-        guessedArray : [],
+        correct: 0,
+        guessedArray: [],
         imgArray: this.shuffle(this.state.imgArray)
-      })
+      });
+
+      scoreDisplay.classList.add("incorrect-guess");
+      highScoreDisplay.classList.add("incorrect-guess");
+      navBar.classList.toggle("nav-incorrect-guess");
+
     }
   }
 
@@ -74,11 +129,11 @@ class App extends React.Component {
 
     return (
       <>
+        <Header />
         <Nav
           highScore={this.state.highScore}
           currentScore={this.state.correct}
         />
-        <Header />
         <Container>
           <Row>
             {this.state.imgArray.map(x =>
