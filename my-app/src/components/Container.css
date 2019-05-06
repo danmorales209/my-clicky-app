@@ -1,0 +1,30 @@
+@media (max-width:575px) {
+    .container {
+        margin-top: 60%;
+    }
+}
+
+@media (min-width: 576px) { 
+    .container {
+        margin-top: 30%;
+    }
+ }
+
+@media (min-width: 768px) { 
+    .container {
+        margin-top: 20%;
+    } 
+}
+
+@media (min-width: 992px) { 
+    .container {
+        margin-top: 20%;
+    } 
+}
+
+@media (min-width: 1200px) { 
+    .container {
+        margin-top: 15%;
+    } 
+}
+

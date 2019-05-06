@@ -129,7 +129,6 @@ class App extends React.Component {
 
     return (
       <>
-        <Header />
         <Nav
           highScore={this.state.highScore}
           currentScore={this.state.correct}

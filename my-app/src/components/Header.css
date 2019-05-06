@@ -1,0 +1,10 @@
+.jumbotron-fluid {
+    background-color: rgb(255, 131, 131);
+    
+}
+
+.jumbotron-fluid .h4 {
+    color: rgb(255, 226, 226);
+    font-weight: bold;
+    -webkit-text-stroke: 0.5px rgb(48, 9, 9);
+}
